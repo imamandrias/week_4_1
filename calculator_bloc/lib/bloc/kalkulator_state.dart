@@ -14,7 +14,10 @@ class InitialCalculator extends KalkulatorState{
 
 class Calculated extends KalkulatorState{
   final double result;
-  Calculated(this.result);
+  final double input;
+  final String kata_1;
+  final String kata_2;
+  Calculated(this.result, this.input, this.kata_1, this.kata_2);
   @override
   List<Object> get props => super.props..addAll([result]);
 }

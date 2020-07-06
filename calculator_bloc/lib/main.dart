@@ -120,6 +120,10 @@ class KalkulatorPage extends StatelessWidget {
                 SizedBox(
                   height: 16.0,
                 ),
+                Text('Hasil Kalkulasi: ',style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
+                SizedBox(
+                  height: 16.0,
+                ),
                 Container(
                   margin: EdgeInsets.all(4),
                   child: ShowResult(state),
@@ -135,12 +139,12 @@ class KalkulatorPage extends StatelessWidget {
   Widget ShowResult(KalkulatorState state) {
     if(state is Calculated){
       return Text(
-        'Hasil Kalkulasi: ${state.result}',
+        '${state.input} ${state.kata_1} ${state.result} ${state.kata_2}',
         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       );
     }else{
       return Text(
-        'Hasil Kalkulasi: 0',
+        'Silahkan Masukan Angka dan Klik Tombol di Atas',
         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       );
     }
