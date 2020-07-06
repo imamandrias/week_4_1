@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
 }
 
 class KalkulatorPage extends StatelessWidget {
+  TextEditingController _input = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,54 +38,91 @@ class KalkulatorPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             TextField(
+              controller: _input,
               decoration: InputDecoration(
-                  labelText: 'Masukan Angka'
-              ),
+                  labelText: 'Masukan Angka',
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(width: 1),
+                      borderRadius: BorderRadius.circular(8.0))),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 8.0,),
+            SizedBox(
+              height: 8.0,
+            ),
             Row(
               children: <Widget>[
                 Expanded(
                   child: RaisedButton(
                     child: Text('Panjang'),
-                    color: Colors.blueGrey,
-                    onPressed: (){},
+                    color: Colors.white12,
+                    onPressed: () {
+
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0)
+                    ),
                   ),
                 ),
-                SizedBox(width: 8.0,),
+                SizedBox(
+                  width: 8.0,
+                ),
                 Expanded(
                   child: RaisedButton(
                     child: Text('Waktu'),
-                    color: Colors.blueGrey,
-                    onPressed: (){},
+                    color: Colors.white12,
+                    onPressed: () {
+
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0)
+                    ),
                   ),
                 ),
-                SizedBox(width: 8.0,),
+                SizedBox(
+                  width: 8.0,
+                ),
                 Expanded(
                   child: RaisedButton(
                     child: Text('Suhu'),
-                    color: Colors.blueGrey,
-                    onPressed: (){},
+                    color: Colors.white12,
+                    onPressed: () {
+
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0)
+                    ),
                   ),
                 ),
-                SizedBox(width: 8.0,),
+                SizedBox(
+                  width: 8.0,
+                ),
                 Expanded(
                   child: RaisedButton(
                     child: Text('Berat'),
-                    color: Colors.blueGrey,
-                    onPressed: (){},
+                    color: Colors.white12,
+                    onPressed: () {
+
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0)
+                    ),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 16.0,),
-            Text('Hasil: ')
+            SizedBox(
+              height: 16.0,
+            ),
+            Container(
+              margin: EdgeInsets.all(4),
+              child: Text(
+                  'Hasil Kalkulasi: ',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            )
           ],
         ),
       ),
-
     );
   }
 }
-
